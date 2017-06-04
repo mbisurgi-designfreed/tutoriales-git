@@ -1,0 +1,28 @@
+GIT
+
+* What is GIT
+    Is a version control system for keeping track of all the files versions for a particular project
+
+* Commits
+    Commits are user created checkpoints. Each one represent the version of the content at one particular point in time
+        - Commit id => Unique identifier for each commit
+        - Commit author => Authoir of the commit
+        - Commit message => Brief description about the change made to the code
+        - HEAD => Current commit
+
+* Repository
+    Collection of files to be tracked down, so that if we commit one file from the repository, GIT will also keep track of the other files on the repository
+        - .git => Hidden folder that makes a regular directory become a GIT repository. To see hidden files or folders use the ls -a command
+
+* Staging Area
+    Intermediate state where files are added before making a commit, and once we commit them, GIT will do a single commit with all those files in the staging area
+
+* Basic Git Commands
+    - git log => Shows every commit done to the code
+        + --stat => Gives stats on which files have changed in each commit
+    - git diff [old_commit_id] [new_commit_id] => Shows the differences between the two commits passed as arguments
+    - git clone [repository URL] => Clones a GIT repository into the directory where the command is executed
+    - git checkout [commit_id] => Restores all the files at the time that commit was made
+    - git init => Initializes a new GIT repository on the specified directory
+    - git status => Shows which files have been changed since last commit
+    - git add [filename] => Add to the stage the file passed as argument
