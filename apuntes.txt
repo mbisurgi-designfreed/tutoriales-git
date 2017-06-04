@@ -26,3 +26,4 @@ GIT
     - git init => Initializes a new GIT repository on the specified directory
     - git status => Shows which files have been changed since last commit
     - git add [filename] => Add to the stage the file passed as argument
+    - git commit => Commits the files in the staging area
