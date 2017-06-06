@@ -14,16 +14,39 @@ GIT
     Collection of files to be tracked down, so that if we commit one file from the repository, GIT will also keep track of the other files on the repository
         - .git => Hidden folder that makes a regular directory become a GIT repository. To see hidden files or folders use the ls -a command
 
+* Remote Repository
+    A repository stored in a cloud server, like GitHub, for example. Files and data can be send to the remote repository (push) or get from the remote repository (pull), and what we push or pull
+    are branches, and with them, all the commits they have
+
 * Staging Area
     Intermediate state where files are added before making a commit, and once we commit them, GIT will do a single commit with all those files in the staging area
+
+* Branches
+    Alternate path used generally when dealing with adding a new feature, but do not want to mess up with the current sable version of a projects, and once it works correctly it can be merge
+    with the master branch
 
 * Basic Git Commands
     - git log => Shows every commit done to the code
         + --stat => Gives stats on which files have changed in each commit
-    - git diff [old_commit_id] [new_commit_id] => Shows the differences between the two commits passed as arguments
+        + --graph --oneline [branchname_1] [branchname_2] => Shows which commits were done on one branch before and after the second branch was checkout
+    - git diff => Shows the differences between the state of the files in the working directory and the staging area
+        + [old_commit_id] [new_commit_id] => Shows the differences between the two commits passed as arguments
+        + --staged => Shows the differences between the state of the files int the staging area and the repository
     - git clone [repository URL] => Clones a GIT repository into the directory where the command is executed
-    - git checkout [commit_id] => Restores all the files at the time that commit was made
+    - git checkout 
+        + [commit_id] => Restores all the files at the time that commit was made
+        + [branchname] => Selects the given branch as the current branch
+        + -b [branchname] => Creates a branch with the given name passed as argument and checkout the created branch
     - git init => Initializes a new GIT repository on the specified directory
     - git status => Shows which files have been changed since last commit
     - git add [filename] => Add to the stage the file passed as argument
     - git commit => Commits the files in the staging area
+    - git reset --hard => Discards any changes in either the working directory or the staging area
+    - git branch => Shows all the existing branches
+        + [branchname] => Creates a branch with the given name passed as argument
+        + -d [branchname] => Deletes a branch with the given name passed as argument
+    - git merge [branchname_1] [branchname_2] => Merge two branches
+    - git show [commit_id] => Shows the differences between the state of the commit passed as argument and his parent commit
+    - git remote => Shows all the existing remotes
+        + add [remotename] [url] => Creates a remote with the given name passed as argument pointing to the url passed as argument. The remotename is usually called origin
+    - git push [remotename] [branchname] => Send the changes on the branch passed as argument to the remote passed as argument 
